@@ -1,4 +1,4 @@
-# NanoSkills (Nano Banana Pro Prompt Orchestrator)
+# NanoSkills (Nano Banana Pro Prompt-Orchestrator)
 
 Kurz gesagt: Das hier ist dein Prompt-Coach für richtig starke AI-Bilder.
 
@@ -12,43 +12,43 @@ Nicht nur "schreib mal einen Prompt", sondern ein sauberes System, das dich Schr
 - Starkes Setup für Licht, Kamera, Material, Stimmung und Komposition.
 - Identity Lock für konsistente Personen/Gesichter.
 - Saubere Negative Prompts, damit typische Fehler rausgefiltert werden.
-- Vorlagen für häufige Use Cases (z. B. Diorama, Product Hero, Fashion Grid, Portrait).
+- Vorlagen für häufige Anwendungsfälle (z. B. Diorama, Produkt-Hero, Mode-Raster, Porträt).
 
 ## Für wen ist das?
 
 Für alle, die mit Nano Banana Pro (oder ähnlichen Bildmodellen) nicht nur "irgendwas Nettes", sondern gezielt Ergebnisse auf hohem Niveau bauen wollen:
 
-- Creator
+- Kreative
 - Designer
-- Marketing/Brand Teams
-- Prompt Nerds
+- Marketing-/Markenteams
+- Prompt-Nerds
 - Leute, die keine Lust auf 20 Zufallsgenerationen haben
 
 ## Was im Repo drin ist
 
-- `SKILL.md`: Das Hauptsystem mit Workflow, Regeln, Checklisten und Templates.
-- `categories/`: 17 Kategorie-Dateien mit konkreten Prompt-Patterns.
+- `SKILL.md`: Das Hauptsystem mit Workflow, Regeln, Checklisten und Vorlagen.
+- `categories/`: 17 Kategorie-Dateien mit konkreten Prompt-Mustern.
 - `quellen.md`: Kuratierte Quellenbasis der Patterns.
 
 ## Die 17 Kategorien auf einen Blick
 
-1. 3D Miniatures & Dioramas
-2. Product Photography
-3. Character Design
-4. Food & Culinary
-5. Fantasy & Sci-Fi
-6. Sports & Action
-7. Urban Cityscapes
-8. Architecture & Interiors
-9. Nature & Landscapes
-10. Logo & Branding
-11. Vintage & Retro
-12. Cinematic Posters
-13. Anime & Manga
-14. Minimalist Icons
-15. Miscellaneous
-16. Portrait Photography
-17. Fashion Photography
+1. 3D-Miniaturen und Dioramen
+2. Produktfotografie
+3. Charakterdesign
+4. Essen und Kulinarik
+5. Fantasie und Science-Fiction
+6. Sport und Dynamik
+7. Urbane Stadtlandschaften
+8. Architektur und Innenräume
+9. Natur und Landschaften
+10. Logos und Markenauftritt
+11. Nostalgisch und Retro
+12. Filmplakate
+13. Anime und Manga
+14. Minimalistische Symbole
+15. Sonstiges
+16. Porträtfotografie
+17. Modefotografie
 
 ## Warum das praktisch ist
 
@@ -56,7 +56,7 @@ Viele Prompts scheitern nicht an der Idee, sondern an fehlender Struktur.
 NanoSkills gibt dir genau diese Struktur:
 
 - gleichbleibende Qualität
-- weniger Trial-and-Error
+- weniger Versuch-und-Irrtum
 - bessere Reproduzierbarkeit
 - schneller von "ganz okay" zu "sieht professionell aus"
 
@@ -64,7 +64,7 @@ NanoSkills gibt dir genau diese Struktur:
 
 1. Idee oder Motiv festlegen.
 2. Passende Kategorie wählen.
-3. Prompt-Format wählen (JSON, Fließtext, Grid).
+3. Prompt-Format wählen (JSON, Fließtext, Raster).
 4. Subjekt, Umgebung, Licht, Kamera und technische Parameter ausfüllen.
 5. Negative Prompt + (optional) Identity Lock setzen.
 6. 2-3 Variationen bauen und bestes Ergebnis weiter schrauben.
