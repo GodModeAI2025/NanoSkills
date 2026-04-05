@@ -1,4 +1,4 @@
-# NanoSkills (Nano Banana Pro Prompt-Orchestrator)
+# NanoSkills
 
 Kurz gesagt: Das hier ist dein Prompt-Coach für richtig starke AI-Bilder.
 
