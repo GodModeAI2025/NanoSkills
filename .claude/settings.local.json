@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/markzimmermann/.claude/skills/nano-banana/categories)",
+      "Bash(cp /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/SKILL.md /Users/markzimmermann/.claude/skills/nano-banana/)",
+      "Bash(cp /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/categories/*.md /Users/markzimmermann/.claude/skills/nano-banana/categories/)",
+      "Bash(rm -rf /Users/markzimmermann/Downloads/nanoSkill/.claude)",
+      "Read(//Users/markzimmermann/.claude/skills/nano-banana/**)",
+      "Bash(mkdir -p /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/categories)",
+      "Bash(cp /Users/markzimmermann/.claude/skills/nano-banana/SKILL.md /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/)",
+      "Bash(cp /Users/markzimmermann/.claude/skills/nano-banana/categories/*.md /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/categories/)",
+      "Bash(rm -rf /Users/markzimmermann/.claude/skills/nano-banana)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/0aicoder0/Ultimate-Nano-Banana-Pro-Collection/main/README.md\" -o /tmp/nano-original.md)",
+      "Read(//tmp/**)",
+      "Bash(mv /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/SKILL.md /Users/markzimmermann/Downloads/nanoSkill/SKILL.md)",
+      "Bash(mv /Users/markzimmermann/Downloads/nanoSkill/.claude/skills/nano-banana/categories /Users/markzimmermann/Downloads/nanoSkill/categories)",
+      "Bash(rm -rf /Users/markzimmermann/Downloads/nanoSkill/.claude/skills)"
+    ]
+  }
+}
