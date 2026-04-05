@@ -1,22 +1,22 @@
 # NanoSkills (Nano Banana Pro Prompt Orchestrator)
 
-Kurz gesagt: Das hier ist dein Prompt-Coach fuer richtig starke AI-Bilder.
+Kurz gesagt: Das hier ist dein Prompt-Coach für richtig starke AI-Bilder.
 
-Nicht nur "schreib mal einen Prompt", sondern ein sauberes System, das dich Schritt fuer Schritt von einer vagen Idee zu einem praezisen, reproduzierbaren Prompt bringt.
+Nicht nur "schreib mal einen Prompt", sondern ein sauberes System, das dich Schritt für Schritt von einer vagen Idee zu einem präzisen, reproduzierbaren Prompt bringt.
 
 ## Was das Ding bietet
 
 - Interaktiven Workflow in klaren Phasen (Idee -> Struktur -> Details -> finaler Prompt).
 - 17 Kategorien mit eigenen Best-Practice-Dateien.
-- Drei Prompt-Modi: tiefes JSON, schneller Fliesstext, Batch/Grid fuer Serien.
-- Starkes Setup fuer Licht, Kamera, Material, Stimmung und Komposition.
-- Identity Lock fuer konsistente Personen/Gesichter.
+- Drei Prompt-Modi: tiefes JSON, schneller Fließtext, Batch/Grid für Serien.
+- Starkes Setup für Licht, Kamera, Material, Stimmung und Komposition.
+- Identity Lock für konsistente Personen/Gesichter.
 - Saubere Negative Prompts, damit typische Fehler rausgefiltert werden.
-- Vorlagen fuer haeufige Use Cases (z. B. Diorama, Product Hero, Fashion Grid, Portrait).
+- Vorlagen für häufige Use Cases (z. B. Diorama, Product Hero, Fashion Grid, Portrait).
 
-## Fuer wen ist das?
+## Für wen ist das?
 
-Fuer alle, die mit Nano Banana Pro (oder aehnlichen Bildmodellen) nicht nur "irgendwas Nettes", sondern gezielt Ergebnisse auf hohem Niveau bauen wollen:
+Für alle, die mit Nano Banana Pro (oder ähnlichen Bildmodellen) nicht nur "irgendwas Nettes", sondern gezielt Ergebnisse auf hohem Niveau bauen wollen:
 
 - Creator
 - Designer
@@ -55,7 +55,7 @@ Fuer alle, die mit Nano Banana Pro (oder aehnlichen Bildmodellen) nicht nur "irg
 Viele Prompts scheitern nicht an der Idee, sondern an fehlender Struktur.
 NanoSkills gibt dir genau diese Struktur:
 
-- gleichbleibende Qualitaet
+- gleichbleibende Qualität
 - weniger Trial-and-Error
 - bessere Reproduzierbarkeit
 - schneller von "ganz okay" zu "sieht professionell aus"
@@ -63,12 +63,12 @@ NanoSkills gibt dir genau diese Struktur:
 ## Kurzstart
 
 1. Idee oder Motiv festlegen.
-2. Passende Kategorie waehlen.
-3. Prompt-Format waehlen (JSON, Fliesstext, Grid).
-4. Subjekt, Umgebung, Licht, Kamera und technische Parameter ausfuellen.
+2. Passende Kategorie wählen.
+3. Prompt-Format wählen (JSON, Fließtext, Grid).
+4. Subjekt, Umgebung, Licht, Kamera und technische Parameter ausfüllen.
 5. Negative Prompt + (optional) Identity Lock setzen.
 6. 2-3 Variationen bauen und bestes Ergebnis weiter schrauben.
 
 ---
 
-Wenn du magst, ist das hier dein "Prompt-Baukasten mit Gelender" fuer Nano Banana Pro: kreativ bleiben, aber mit System.
+Wenn du magst, ist das hier dein "Prompt-Baukasten mit Geländer" für Nano Banana Pro: kreativ bleiben, aber mit System.
