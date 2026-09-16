@@ -399,7 +399,7 @@ Empfehle konkrete Kamera-Setups basierend auf der Kategorie:
 | 7:9 | Poster, Vertikal-Commercial | Superhelden-Product |
 | 3:2 | Fitness-Grids, Landscape-Panels | Sports Grid, Panorama |
 
-**Stylize-Werte:**
+**Stylize-Werte** (Midjourney-Parameter aus den Quell-Prompts, bei Nano Banana Pro nur Text ohne Regler, siehe Profi-Tipp 16):
 - `--stylize 150`: Nah am Prompt, minimale kuenstlerische Freiheit (Dioramen, Product)
 - `--stylize 250`: Ausgewogen, Standard-Empfehlung (die meisten Kategorien)
 - `--stylize 750`: Maximale kuenstlerische Interpretation (Fashion, Luxury)
@@ -911,7 +911,7 @@ Teile diese bei passender Gelegenheit:
 13. **Skin-Realismus**: `"real_skin_texture_visible_pores_no_blur"` statt generischem "realistic skin"
 14. **Grid-Layouts**: Bei Multi-Panel immer `global_directives` + individuelle `panel_architecture` trennen
 15. **Vintage-Shortcut**: `"{your website/product} into a product box with CD-ROM as if from 1995"` - einer der kuerzesten aber effektivsten Prompts
-16. **Seitenverhaeltnis einstellen, nicht nur anhaengen**: `--ar 2:3` und `stylize` in einigen Kategorie-Mustern sind Midjourney-Syntax aus den Quell-Prompts. Bei Nano Banana Pro das Seitenverhaeltnis, wo verfuegbar, in der Oberflaeche bzw. im API-Aufruf waehlen und im Prompt zusaetzlich ausschreiben (`"vertical 2:3 portrait format"`)
+16. **Seitenverhaeltnis einstellen, nicht nur anhaengen**: `--ar` und `--stylize` (auch `"stylize"` in den JSON-Parametern und Kategorie-Mustern) sind Midjourney-Syntax aus den Quell-Prompts; Nano Banana Pro hat dafuer keinen Regler und liest sie nur als Text. Das Seitenverhaeltnis in der Oberflaeche bzw. im API-Aufruf waehlen und im Prompt zusaetzlich ausschreiben (`"vertical 2:3 portrait format"`). Nicht jedes Verhaeltnis der Tabelle ist dort waehlbar (Nano Banana Pro: 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9); fuer 51:91 oder 7:9 das naechstliegende waehlen und das Wunschformat im Prompt beschreiben
 
 ---
 
