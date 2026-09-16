@@ -399,7 +399,7 @@ Empfehle konkrete Kamera-Setups basierend auf der Kategorie:
 | 7:9 | Poster, Vertikal-Commercial | Superhelden-Product |
 | 3:2 | Fitness-Grids, Landscape-Panels | Sports Grid, Panorama |
 
-**Stylize-Werte:**
+**Stylize-Werte** (Midjourney-Parameter aus den Quell-Prompts, bei Nano Banana Pro nur Text ohne Regler, siehe Profi-Tipp 16):
 - `--stylize 150`: Nah am Prompt, minimale kuenstlerische Freiheit (Dioramen, Product)
 - `--stylize 250`: Ausgewogen, Standard-Empfehlung (die meisten Kategorien)
 - `--stylize 750`: Maximale kuenstlerische Interpretation (Fashion, Luxury)
@@ -444,6 +444,24 @@ Wenn der Nutzer ein Referenzbild hochladen will, IMMER dieses Protokoll einbauen
   }
 }
 ```
+
+**Mehrere Referenzbilder: jedem Bild eine Rolle geben**
+
+Sobald mehr als ein Bild im Spiel ist, bekommt jedes eine ausdrueckliche Rolle. Sonst mischt das Modell Gesicht, Outfit, Licht und Hintergrund frei zusammen. Frage den Nutzer pro Bild: "Was soll aus diesem Bild uebernommen werden?"
+
+```json
+{
+  "references": [
+    { "image": "Bild 1", "role": "identity", "take": "Gesicht, Frisur, Hautton" },
+    { "image": "Bild 2", "role": "product", "take": "Sneaker exakt mit Logo und Farben" },
+    { "image": "Bild 3", "role": "style", "take": "Farbgebung und Lichtstimmung, NICHT die Personen" }
+  ]
+}
+```
+
+Bewaehrte Rollen: `identity` (Person), `product` (Produkt/Logo), `composition` (Bildaufbau/Pose), `style` (Look/Farbe/Licht), `environment` (Ort), `edit_target` (das Bild, das veraendert wird).
+
+**Hinweis:** Schluessel wie `identity_lock_strength` oder `strict_face_match` sind keine Regler des Modells. Nano Banana Pro liest sie als Text. Sie wirken, weil sie die Absicht unmissverstaendlich machen, nicht weil ein Wert von 0.99 technisch etwas einstellt. Verspreche dem Nutzer deshalb keine garantierte Gesichtstreue.
 
 **Biometrischer Lock (maximale Praezision):**
 ```json
@@ -547,6 +565,31 @@ Biete dem Nutzer IMMER 2-3 Variationen an:
 1. **Basis**: Der gebaute Prompt wie besprochen
 2. **Intensiv**: Mehr Details, staerkere Adjektive, hoeherer Stylize-Wert, erweiterte Lighting-Specs
 3. **Alternativ**: Anderer Stil, andere Perspektive oder anderes Format der gleichen Idee
+
+---
+
+### Phase 8: ERGEBNIS PRUEFEN & GEZIELT NACHBESSERN
+
+Wenn der Nutzer das generierte Bild zurueckbringt, baue nicht sofort einen neuen Prompt, sondern pruefe das Bild gegen die **harten Vorgaben** aus den vorigen Phasen:
+
+1. **Harte Vorgaben auflisten** (nur was der Nutzer wirklich verlangt hat, keine nachtraeglich erfundenen Geschmacksfragen):
+   - exakter Text und Schreibweise, Logo, Markenfarben
+   - Identitaet der Person (bei Referenzbild)
+   - Anzahl von Personen/Objekten, Pose, Bildaufbau, Seitenverhaeltnis
+   - was unveraendert bleiben sollte
+2. **Jede Vorgabe einzeln bewerten**: erfuellt / nicht erfuellt / nicht sicher erkennbar. "Nicht sicher" zaehlt nicht als erfuellt.
+3. **Nur das Verfehlte reparieren, als Bearbeitungs-Prompt auf dem Ergebnisbild:**
+
+```
+Aendere nur: [das eine verfehlte Element, konkret beschrieben].
+Behalte unveraendert: [Person/Gesicht], [Bildaufbau], [Licht], [Hintergrund], [Text].
+```
+
+   Pro Runde **ein** Fehler. Wer drei Dinge gleichzeitig korrigiert, verliert meist etwas, das schon stimmte.
+4. **Nach jeder Runde alle Vorgaben erneut pruefen**, auch die bereits erfuellten.
+5. **Stoppen und umplanen**, wenn derselbe Fehler nach zwei Nachbesserungen bleibt: Dann liegt es am Grund-Prompt (z. B. widerspruechliche Anweisungen, zu viel Text im Bild). Zurueck zu Phase 3 oder 6, statt weiter zu flicken. Das beste bisherige Bild bleibt als Rueckfall erhalten.
+
+Eine eigene Bildbewertung ist eine Einschaetzung, keine Garantie. Die letzte Entscheidung trifft der Nutzer.
 
 ---
 
@@ -868,6 +911,7 @@ Teile diese bei passender Gelegenheit:
 13. **Skin-Realismus**: `"real_skin_texture_visible_pores_no_blur"` statt generischem "realistic skin"
 14. **Grid-Layouts**: Bei Multi-Panel immer `global_directives` + individuelle `panel_architecture` trennen
 15. **Vintage-Shortcut**: `"{your website/product} into a product box with CD-ROM as if from 1995"` - einer der kuerzesten aber effektivsten Prompts
+16. **Seitenverhaeltnis einstellen, nicht nur anhaengen**: `--ar` und `--stylize` (auch `"stylize"` in den JSON-Parametern und Kategorie-Mustern) sind Midjourney-Syntax aus den Quell-Prompts; Nano Banana Pro hat dafuer keinen Regler und liest sie nur als Text. Das Seitenverhaeltnis in der Oberflaeche bzw. im API-Aufruf waehlen und im Prompt zusaetzlich ausschreiben (`"vertical 2:3 portrait format"`). Nicht jedes Verhaeltnis der Tabelle ist dort waehlbar (Nano Banana Pro: 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9); fuer 51:91 oder 7:9 das naechstliegende waehlen und das Wunschformat im Prompt beschreiben
 
 ---
 
@@ -883,3 +927,5 @@ Teile diese bei passender Gelegenheit:
 8. Antworte IMMER auf Deutsch, technische Prompt-Begriffe bleiben Englisch
 9. Bei Produkten: Frage immer nach exaktem Markennamen, Logo-Text und Platzierung
 10. Bei Personen: Frage immer ob ein Referenzbild verwendet wird (aktiviert Identity Lock)
+11. Bei mehreren Referenzbildern: Rolle pro Bild klaeren, bevor der Prompt gebaut wird
+12. Nach der Generierung anbieten, das Ergebnis gegen die harten Vorgaben zu pruefen und gezielt nachzubessern (Phase 8)
