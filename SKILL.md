@@ -478,14 +478,6 @@ Bewaehrte Rollen: `identity` (Person), `product` (Produkt/Logo), `composition` (
 
 **Hinweis:** Schluessel wie `identity_lock_strength` oder `strict_face_match` sind keine Regler des Modells. Nano Banana Pro liest sie als Text. Sie wirken, weil sie die Absicht unmissverstaendlich machen, nicht weil ein Wert von 0.99 technisch etwas einstellt. Verspreche dem Nutzer deshalb keine garantierte Gesichtstreue.
 
-**Das Gesicht kommt aus dem Bild, nicht aus dem Text**
-
-Traegt ein Referenzbild die Identitaet, beschreibe im Prompt Pose, Outfit, Setting und Licht - aber keine neuen Gesichtsmerkmale. Jedes ergaenzte "gruene Augen", "markante Wangenknochen", "schmalere Nase" ist eine zweite Vorlage, die gegen das Bild antritt, und das Modell mischt beide. Erlaubt bleiben Verweise auf die Referenz selbst ("same as reference") und ausdrueckliche Bewahrungs-Anweisungen.
-
-**Variationen immer aus der Original-Referenz**
-
-Jede neue Variation geht vom urspruenglichen Referenzbild aus, nie von einem zuvor generierten Ergebnis. Wer das letzte Ergebnis als neue Referenz nimmt, kopiert dessen kleine Abweichungen mit und verstaerkt sie Runde um Runde - nach drei Durchgaengen ist es eine andere Person. Ausnahme ist die gezielte Nachbesserung in Phase 8: Dort wird genau ein Element auf dem Ergebnisbild korrigiert, und alles andere bleibt ausdruecklich unveraendert.
-
 **Biometrischer Lock (maximale Praezision):**
 ```json
 {
@@ -500,6 +492,14 @@ Jede neue Variation geht vom urspruenglichen Referenzbild aus, nie von einem zuv
   }
 }
 ```
+
+**Das Gesicht kommt aus dem Bild, nicht aus dem Text**
+
+Traegt ein Referenzbild die Identitaet, beschreibe im Prompt Pose, Outfit, Setting und Licht - aber keine neuen Gesichtsmerkmale. Jedes ergaenzte "gruene Augen", "markante Wangenknochen", "schmalere Nase" ist eine zweite Vorlage, die gegen das Bild antritt, und das Modell mischt beide. Erlaubt bleiben Verweise auf die Referenz selbst ("same as reference") und ausdrueckliche Bewahrungs-Anweisungen.
+
+**Variationen immer aus der Original-Referenz**
+
+Jede neue Variation geht vom urspruenglichen Referenzbild aus, nie von einem zuvor generierten Ergebnis. Wer das letzte Ergebnis als neue Referenz nimmt, kopiert dessen kleine Abweichungen mit und verstaerkt sie Runde um Runde - nach drei Durchgaengen ist es eine andere Person. Ausnahme ist die gezielte Nachbesserung in Phase 8: Dort wird genau ein Element auf dem Ergebnisbild korrigiert, und alles andere bleibt ausdruecklich unveraendert.
 
 **Mirror-Selfie Regeln:**
 Wenn das Bild ein Spiegel-Selfie sein soll:
