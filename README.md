@@ -10,9 +10,9 @@ Nicht nur "schreib mal einen Prompt", sondern ein sauberes System, das dich Schr
 - 17 Kategorien mit eigenen Best-Practice-Dateien.
 - Drei Prompt-Modi: tiefes JSON, schneller Fließtext, Batch/Grid für Serien.
 - Starkes Setup für Licht, Kamera, Material, Stimmung und Komposition.
-- Identity Lock für konsistente Personen/Gesichter, klare Rollen bei mehreren Referenzbildern.
+- Identity Lock für konsistente Personen/Gesichter, klare Rollen bei mehreren Referenzbildern, Variationen immer aus der Original-Referenz.
 - Ergebnis-Check: generiertes Bild gegen die harten Vorgaben prüfen und pro Runde genau einen Fehler gezielt nachbessern.
-- Saubere Negative Prompts, damit typische Fehler rausgefiltert werden.
+- Saubere Negative Prompts: ausgewählt nach den Fehlern, die bei diesem Bild wirklich drohen, statt pauschaler Blacklist.
 - Vorlagen für häufige Anwendungsfälle (z. B. Diorama, Produkt-Hero, Mode-Raster, Porträt).
 
 ## Für wen ist das?
@@ -66,7 +66,7 @@ NanoSkills gibt dir genau diese Struktur:
 1. Idee oder Motiv festlegen.
 2. Passende Kategorie wählen.
 3. Prompt-Format wählen (JSON, Fließtext, Raster).
-4. Subjekt, Umgebung, Licht, Kamera und technische Parameter ausfüllen.
+4. Subjekt (bei mehreren: jedes einzeln mit Anzahl, Merkmalen, Position und Aktion), Umgebung, Licht, Kamera und technische Parameter ausfüllen.
 5. Negative Prompt + (optional) Identity Lock setzen.
 6. 2-3 Variationen bauen und bestes Ergebnis weiter schrauben.
 7. Generiertes Bild gegen die Vorgaben prüfen und nur das Verfehlte nachbessern.

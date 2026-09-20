@@ -263,6 +263,21 @@ Frage nach und detailliere in dieser Struktur:
 }
 ```
 
+**Mehrere Subjekte: jedes einzeln binden**
+
+Sobald mehr als eine Person oder mehr als ein Objekt im Bild ist, bekommt jedes davon seine eigenen Angaben: Anzahl, Merkmale (Farbe, Material, Kleidung), Position im Bild und Aktion. Sonst wandern Merkmale zwischen den Subjekten ("die rote Jacke" landet beim Falschen) oder eines faellt ganz weg.
+
+```json
+{
+  "subjects": [
+    { "id": "A", "count": 1, "what": "Frau, 30, roter Wollmantel", "position": "links im Vordergrund", "action": "schaut zur Kamera" },
+    { "id": "B", "count": 2, "what": "Kinder, gelbe Regenjacken", "position": "rechts, halb verdeckt", "action": "laufen vom Betrachter weg" }
+  ]
+}
+```
+
+Frage im Zweifel nach der Anzahl, statt sie zu raten. Die Anzahl gehoert spaeter zu den harten Vorgaben in Phase 8.
+
 #### 3.3 UMGEBUNG & SETTING
 
 Strukturiere die Umgebung in Schichten:
@@ -478,6 +493,14 @@ Bewaehrte Rollen: `identity` (Person), `product` (Produkt/Logo), `composition` (
 }
 ```
 
+**Das Gesicht kommt aus dem Bild, nicht aus dem Text**
+
+Traegt ein Referenzbild die Identitaet, beschreibe im Prompt Pose, Outfit, Setting und Licht - aber keine neuen Gesichtsmerkmale. Jedes ergaenzte "gruene Augen", "markante Wangenknochen", "schmalere Nase" ist eine zweite Vorlage, die gegen das Bild antritt, und das Modell mischt beide. Erlaubt bleiben Verweise auf die Referenz selbst ("same as reference") und ausdrueckliche Bewahrungs-Anweisungen.
+
+**Variationen immer aus der Original-Referenz**
+
+Jede neue Variation geht vom urspruenglichen Referenzbild aus, nie von einem zuvor generierten Ergebnis. Wer das letzte Ergebnis als neue Referenz nimmt, kopiert dessen kleine Abweichungen mit und verstaerkt sie Runde um Runde - nach drei Durchgaengen ist es eine andere Person. Ausnahme ist die gezielte Nachbesserung in Phase 8: Dort wird genau ein Element auf dem Ergebnisbild korrigiert, und alles andere bleibt ausdruecklich unveraendert.
+
 **Mirror-Selfie Regeln:**
 Wenn das Bild ein Spiegel-Selfie sein soll:
 ```json
@@ -495,9 +518,14 @@ Wenn das Bild ein Spiegel-Selfie sein soll:
 
 ### Phase 5: NEGATIVE PROMPTS
 
+Die Listen unten sind ein **Vorrat, kein Block**. Waehle daraus die Fehler aus, die bei genau diesem Bild wahrscheinlich sind, statt alles anzuhaengen. Zwei Regeln davor:
+
+- **Nur das Wahrscheinliche.** Ein Portrait ohne Produkt braucht kein `brand misspelling`, eine Landschaft ohne Menschen kein `bad hands`. Eine lange Allzweck-Liste verteilt die Aufmerksamkeit des Modells auf Fehler, die gar nicht drohen.
+- **Kein Widerspruch zum Gewuenschten.** Pruefe jeden Negativ-Begriff gegen den positiven Prompt. `3d render`, `photorealistic`, `illustration`, `realism`, `high contrast` oder `heavy makeup` stehen in den Listen unten - wenn der Nutzer genau das will, fliegen sie raus. Ein Negativ, das dem Wunsch widerspricht, kostet entweder das Wunschergebnis oder wird ignoriert.
+
 Schlage basierend auf der Kategorie passende Negatives vor:
 
-**Universal (immer empfohlen):**
+**Universal (meist sinnvoll):**
 ```
 blurry, low-res, noisy, grainy, watermark, text errors, deformed, low quality, amateur
 ```
@@ -546,7 +574,7 @@ Setze den finalen Prompt zusammen. Nutze die **Qualitaets-Checkliste**:
 - [ ] Atmosphaere/Stimmung ist durch Umgebungsdetails definiert?
 - [ ] Aspect Ratio passt zum Verwendungszweck?
 - [ ] Identity Lock ist eingebaut (bei Referenzbildern)?
-- [ ] Negative Prompts sind kategoriespezifisch beigefuegt?
+- [ ] Negative Prompts sind ausgewaehlt statt pauschal angehaengt, und keiner widerspricht dem Gewuenschten?
 - [ ] Haende-Anatomie ist spezifiziert (bei Personen)?
 - [ ] Branding/Text-Regeln sind definiert (bei Produkten)?
 
@@ -565,6 +593,8 @@ Biete dem Nutzer IMMER 2-3 Variationen an:
 1. **Basis**: Der gebaute Prompt wie besprochen
 2. **Intensiv**: Mehr Details, staerkere Adjektive, hoeherer Stylize-Wert, erweiterte Lighting-Specs
 3. **Alternativ**: Anderer Stil, andere Perspektive oder anderes Format der gleichen Idee
+
+Jede Variation geht vom Original-Referenzbild aus, nicht vom Ergebnis der vorigen Variation (siehe Phase 4).
 
 ---
 
